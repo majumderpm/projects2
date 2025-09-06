@@ -1,0 +1,16 @@
+.search-toggle {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    font-size: 17px;
+    top: 6px;
+    right: 12px;
+}
+
+/* .downArrow {
+    z-index: 2;
+    font-size: 12px;
+    position: absolute;
+    top: 14px;
+    right: 9px;
+} */
