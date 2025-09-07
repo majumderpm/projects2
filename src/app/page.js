@@ -5,7 +5,7 @@ import Category from "./home/category/Category";
 import Product from "./home/products/Product";
 import Testimonials from "@/component/testimonials/Testimonials";
 import Certificates from "./home/certificates/Certificates";
-import Feature from "./home/feature/Feature";
+import Feature from "../component/feature/Feature";
 
 export default function Home() {
   return (

@@ -9,7 +9,7 @@ const Header = () => {
     // helper function
     const isActive = (href) => pathname === href;
     const [isOpen, setIsOpen] = useState(false);
-      const [menuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
 
 
@@ -61,22 +61,19 @@ const Header = () => {
                                         <div className="select-custom">
                                             <select id="cat" name="cat">
                                                 <option value="">All Categories</option>
-                                                <option value="4">Fashion</option>
-                                                <option value="12">- Women</option>
-                                                <option value="13">- Men</option>
-                                                <option value="66">- Jewellery</option>
-                                                <option value="67">- Kids Fashion</option>
-                                                <option value="5">Electronics</option>
-                                                <option value="21">- Smart TVs</option>
-                                                <option value="22">- Cameras</option>
-                                                <option value="63">- Games</option>
-                                                <option value="7">Home &amp; Garden</option>
-                                                <option value="11">Motors</option>
-                                                <option value="31">- Cars and Trucks</option>
-                                                <option value="32">- Motorcycles &amp; Powersports</option>
-                                                <option value="33">- Parts &amp; Accessories</option>
-                                                <option value="34">- Boats</option>
-                                                <option value="57">- Auto Tools &amp; Supplies</option>
+                                                <option value="1">NVR</option>
+                                                <option value="2">DVR</option>
+                                                <option value="3">IP Camera</option>
+                                                <option value="4">AHD Camera</option>
+                                                <option value="5">SMPS and Adaptors</option>
+                                                <option value="6">Storage Device</option>
+                                                <option value="7">Cables</option>
+                                                <option value="8">WiFi Camera</option>
+                                                <option value="9">Network Devices</option>
+                                                <option value="10">Biometric</option>
+                                                <option value="11">Monitors</option>
+                                                <option value="12">Smart Board</option>
+                                                <option value="13">Computer Accessories</option>
                                             </select>
                                             {/* <i className="fa-solid fa-chevron-down downArrow"></i> */}
                                         </div>
@@ -122,14 +119,20 @@ const Header = () => {
                                         onClick={() => setIsOpen(!isOpen)}>products </a>
                                     {isOpen && (
                                         <ul className="submenu">
-                                            <li><a href="/wishlist">Wishlist</a></li>
-                                            <li><a href="/cart">Shopping Cart</a></li>
-                                            <li><a href="/checkout">Checkout</a></li>
-                                            <li><a href="/dashboard">Dashboard</a></li>
-                                            <li><a href="/about">About Us</a></li>
-                                            <li><a href="/contact">Contact Us</a></li>
-                                            <li><a href="/login">Login</a></li>
-                                            <li><a href="/forgot-password">Forgot Password</a></li>
+                                            <li><a href="/productDetails">NVR</a></li>
+                                            <li><a href="/dvr">DVR</a></li>
+                                            <li><a href="/ip-camera">IP Camera</a></li>
+                                            <li><a href="/ahd-camera">AHD Camera</a></li>
+                                            <li><a href="/smps-adaptors">SMPS and Adaptors</a></li>
+                                            <li><a href="/storage-device">Storage Device</a></li>
+                                            <li><a href="/cables">Cables</a></li>
+                                            <li><a href="/wifi-camera">WiFi Camera</a></li>
+                                            <li><a href="/network-devices">Network Devices</a></li>
+                                            <li><a href="/biometric">Biometric</a></li>
+                                            <li><a href="/monitors">Monitors</a></li>
+                                            <li><a href="/smart-board">Smart Board</a></li>
+                                            <li><a href="/computer-accessories">Computer Accessories</a></li>
+
                                         </ul>
                                     )}
                                 </li>
@@ -161,7 +164,7 @@ const Header = () => {
                 {/* mobile header */}
                 <div className={`mobileHeder ${menuOpen ? "show" : ""}`} >
                     <div className="container">
-                        <button className='border-0 bg-transparent closeBtn'  onClick={() => setMenuOpen(false)}><i class="fa-solid fa-xmark"></i></button>
+                        <button className='border-0 bg-transparent closeBtn' onClick={() => setMenuOpen(false)}><i className="fa-solid fa-xmark"></i></button>
                         <nav className="main-nav w-100">
                             <ul className="menu">
                                 <li className={isActive("/") ? "active" : ""}>
@@ -175,14 +178,20 @@ const Header = () => {
                                         onClick={() => setIsOpen(!isOpen)}>products </a>
                                     {isOpen && (
                                         <ul className="submenu">
-                                            <li><a href="/wishlist">Wishlist</a></li>
-                                            <li><a href="/cart">Shopping Cart</a></li>
-                                            <li><a href="/checkout">Checkout</a></li>
-                                            <li><a href="/dashboard">Dashboard</a></li>
-                                            <li><a href="/about">About Us</a></li>
-                                            <li><a href="/contact">Contact Us</a></li>
-                                            <li><a href="/login">Login</a></li>
-                                            <li><a href="/forgot-password">Forgot Password</a></li>
+                                            <li><a href="/nvr">NVR</a></li>
+                                            <li><a href="/dvr">DVR</a></li>
+                                            <li><a href="/ip-camera">IP Camera</a></li>
+                                            <li><a href="/ahd-camera">AHD Camera</a></li>
+                                            <li><a href="/smps-adaptors">SMPS and Adaptors</a></li>
+                                            <li><a href="/storage-device">Storage Device</a></li>
+                                            <li><a href="/cables">Cables</a></li>
+                                            <li><a href="/wifi-camera">WiFi Camera</a></li>
+                                            <li><a href="/network-devices">Network Devices</a></li>
+                                            <li><a href="/biometric">Biometric</a></li>
+                                            <li><a href="/monitors">Monitors</a></li>
+                                            <li><a href="/smart-board">Smart Board</a></li>
+                                            <li><a href="/computer-accessories">Computer Accessories</a></li>
+
                                         </ul>
                                     )}
                                 </li>
