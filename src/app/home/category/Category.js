@@ -28,7 +28,7 @@ const Category = () => {
             {infoItems.map((item) => (
               <div
                 key={item.id}
-                className="info-box info-box-icon-left col-sm-6 col-lg-2"
+                className="info-box info-box-icon-left col-lg-2 col-mb-3 col-sm-4 col-6"
               >
                 <img src={item.icon} className={` text-primary iconImage`} alt={item.text}></img>
                 <div className="info-box-content">

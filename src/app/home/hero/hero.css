@@ -31,3 +31,12 @@
     max-width: 580px;
     width: 100%;
 }
+
+@media (max-width: 767px) {
+    .swiper-slide img {
+        object-fit: cover;
+        width: 100% !important;
+        height: 358px !important;
+        display: block;
+    }
+}

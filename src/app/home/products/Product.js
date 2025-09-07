@@ -84,10 +84,11 @@ const Product = () => {
                     <Swiper
                         modules={[Navigation]}
                         spaceBetween={20}
-                        slidesPerView={2}
+                        slidesPerView={1}
                         navigation={true}
                         pagination={false}
                         breakpoints={{
+                            576: { slidesPerView: 2 },
                             768: { slidesPerView: 3 },
                             992: { slidesPerView: 4 },
                             1200: { slidesPerView: 4 },

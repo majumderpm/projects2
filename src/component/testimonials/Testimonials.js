@@ -49,30 +49,41 @@ const Testimonials = () => {
 
     return (
         <>
-            <section className="testimonials-section">
-                <div className="container">
-                    <Swiper
-                        modules={[Pagination, Autoplay]}
-                        spaceBetween={30}
-                        slidesPerView={3}
-                        pagination={{ clickable: true }}
-                        autoplay={{ delay: 4000, disableOnInteraction: false }}
-                        loop={true}
-                    >
-                        {testimonials.map((t) => (
-                            <SwiperSlide key={t.id}>
-                                <figure className="snip1533">
-                                    <figcaption>
-                                        <blockquote>
-                                            <p>{t.text}</p>
-                                        </blockquote>
-                                        <h3>{t.name}</h3>
-                                        <h4>{t.company}</h4>
-                                    </figcaption>
-                                </figure>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+            <section className="">
+                <h2 className="section-title heading-border ls-20 border-0">
+                    Happy Customers
+                </h2>
+                <div className="testimonials-section">
+                    <div className="container">
+                        <Swiper
+                            modules={[Pagination, Autoplay]}
+                            spaceBetween={30}
+                            slidesPerView={1}
+                            pagination={{ clickable: true }}
+                            autoplay={{ delay: 4000, disableOnInteraction: false }}
+                            loop={true}
+                            breakpoints={{
+                                576: { slidesPerView: 1 },
+                                768: { slidesPerView: 2 },
+                                992: { slidesPerView: 2 },
+                                1200: { slidesPerView: 3 },
+                            }}
+                        >
+                            {testimonials.map((t) => (
+                                <SwiperSlide key={t.id}>
+                                    <figure className="snip1533">
+                                        <figcaption>
+                                            <blockquote>
+                                                <p>{t.text}</p>
+                                            </blockquote>
+                                            <h3>{t.name}</h3>
+                                            <h4>{t.company}</h4>
+                                        </figcaption>
+                                    </figure>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                 </div>
             </section>
         </>

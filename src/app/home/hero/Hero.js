@@ -52,8 +52,8 @@ const Hero = () => {
                 slidesPerView={1}
                 navigation={false}
                 pagination={false}
-                autoplay={{ delay: 5000, disableOnInteraction: false }}
-                // autoplay={false}
+                // autoplay={{ delay: 5000, disableOnInteraction: false }}
+                autoplay={false}
                 loop={true}
             >
                 {slides.map((slide) => (

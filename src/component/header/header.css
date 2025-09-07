@@ -1,16 +1,138 @@
 .search-toggle {
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    font-size: 17px;
-    top: 6px;
-    right: 12px;
+   position: absolute;
+   right: 0;
+   z-index: 2;
+   font-size: 17px;
+   top: 6px;
+   right: 12px;
 }
 
-/* .downArrow {
-    z-index: 2;
-    font-size: 12px;
-    position: absolute;
-    top: 14px;
-    right: 9px;
+
+.menu li:hover ul.submenu {
+   display: block;
+}
+
+.drop_menu {
+   position: relative;
+}
+
+.drop_menu a.menu-toggle {
+   position: relative;
+}
+
+.drop_menu a.menu-toggle::after {
+   content: "";
+   text-align: center;
+   padding-bottom: 2px;
+   font-family: FontAwesome;
+   font-weight: 900;
+   line-height: 1;
+   display: inline-block;
+   position: absolute;
+   top: 50%;
+   right: unset;
+   left: 80px;
+   transform: translateY(-50%);
+}
+
+.drop_menu {
+   margin-right: 50px !important;
+}
+
+@media (max-width: 991px) {
+   .header-bottom.sticky-header {
+      display: none;
+   }
+
+   .header-contact {
+      display: none;
+   }
+
+   /* .mobileHeder {
+      display: block !important;
+   } */
+
+   .mobileHeder .main-nav .menu>li {
+      margin-right: 35px;
+      display: contents;
+   }
+
+   .mobileHeder .main-nav .menu>li.active>a,
+   .main-nav .menu>li>a:hover {
+      border-top: unset;
+   }
+
+   .mobileHeder .drop_menu:after {
+      top: 26%;
+      left: 83px;
+      right: unset;
+      color: #5f5a5a;
+   }
+
+   .mobileHeder .menu ul {
+
+      background-color: #252424;
+      position: static;
+
+   }
+
+   .mobile-menu-toggler{
+      display: block !important;
+   }
+  .header-search-wrapper {
+    z-index: 999;
+    color: #8d8d8d;
+    box-sizing: content-box;
+    border: 0;
+    border-radius: 5rem;
+    height: 40px;
+    margin-top: 0;
+    display: -ms-flexbox;
+    position: static;
+    /* right: -2.3rem; */
+    display: flex;
+
+}
+
+
+}
+
+@media (max-width: 575px){
+   .header-search .select-custom {
+    display: none;
+}
+}
+/* .drop_menu {
+   position: relative;
 } */
+
+.mobileHeder {
+   background: var(--foreground);
+   width: 0;
+   max-width: 400px;
+   height: 100%;
+   transition: all 0.3s ease-in-out;
+   /* display: none; */
+   position: fixed;
+   left: -1000%;
+   z-index: 9999;
+   overflow: auto;
+   top: 0;
+   padding-top: 50px;
+}
+
+.closeBtn {
+   color: #b1b0b0;
+   position: absolute;
+   top: -40px;
+   right: 0px;
+   font-size: 20px;
+}
+.mobile-menu-toggler{
+   display: none;
+}
+.mobileHeder.show{
+   /* display: block; */
+   left: 0;
+   width: 100%;
+}

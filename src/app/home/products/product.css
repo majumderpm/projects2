@@ -30,18 +30,21 @@ h2.section-title.heading-border.ls-20.border-0 {
     padding-block: 15px 50px;
 }
 
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
     border: 1px solid #058e9e;
     width: 30px;
     height: 30px;
     border-radius: 50%;
 }
+
 .swiper-button-prev {
     top: 95%;
-    left: 92%;
+    left: calc(92% - 65px);
 }
-.swiper-button-next{
-       top: 95%;
+
+.swiper-button-next {
+    top: 95%;
 }
 
 .swiper-button-prev:after,

@@ -1,22 +1,32 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import "./header.css";
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
+
+    const pathname = usePathname();
+    // helper function
+    const isActive = (href) => pathname === href;
+    const [isOpen, setIsOpen] = useState(false);
+      const [menuOpen, setMenuOpen] = useState(false);
+
+
+
     return (
         <div>
-
             <header className="header">
                 {/* Header Middle */}
                 <div
                     className="header-middle sticky-header"
-                    data-sticky-options='{"mobile": true}'
+                // data-sticky-options='{"mobile": true}'
                 >
                     <div className="container d-flex align-items-center">
                         <div className="header-left w-auto pl-0">
                             <button
                                 className="mobile-menu-toggler text-primary mr-2"
                                 type="button"
+                                onClick={() => setMenuOpen(true)}
                             >
                                 <i className="fas fa-bars"></i>
                             </button>
@@ -90,38 +100,48 @@ const Header = () => {
                                 </h6>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
 
                 {/* Header Bottom */}
-                <div className="header-bottom sticky-header d-none d-lg-block"
-                    data-sticky-options='{"mobile": false}' >
+                <div className="header-bottom sticky-header"
+                >
                     <div className="container">
                         <nav className="main-nav w-100">
                             <ul className="menu">
-                                <li className="active">
-                                    <a href="demo4.html">Home</a>
+                                <li className={isActive("/") ? "active" : ""}>
+                                    <a href="/" >Home</a>
                                 </li>
 
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        products
-                                    </a>
-                                    <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Action</a></li>
-                                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                                        <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
+
+                                <li className={`drop_menu ${pathname.startsWith("/products") ? "active" : ""} ${isOpen ? "open" : ""
+                                    }`}>
+                                    <a href="#" className="menu-toggle"
+                                        onClick={() => setIsOpen(!isOpen)}>products </a>
+                                    {isOpen && (
+                                        <ul className="submenu">
+                                            <li><a href="/wishlist">Wishlist</a></li>
+                                            <li><a href="/cart">Shopping Cart</a></li>
+                                            <li><a href="/checkout">Checkout</a></li>
+                                            <li><a href="/dashboard">Dashboard</a></li>
+                                            <li><a href="/about">About Us</a></li>
+                                            <li><a href="/contact">Contact Us</a></li>
+                                            <li><a href="/login">Login</a></li>
+                                            <li><a href="/forgot-password">Forgot Password</a></li>
+                                        </ul>
+                                    )}
                                 </li>
-                                <li>
-                                    <a href="blog.html">About Us</a>
+                                <li className={isActive("/about") ? "active" : ""}>
+                                    <a href="/about">About Us</a>
                                 </li>
-                                <li>
-                                    <a href="contact.html">Contact Us</a>
+                                <li className={isActive("/contact") ? "active" : ""}>
+                                    <a href="/contact" >Contact Us</a>
                                 </li>
-                                <li className="float-right ms-3">
+                                <li className={`float-right ms-3 `}>
                                     <a
-                                        href="https://1.envato.market/DdLk5"
+                                        href="/"
                                         rel="noopener"
                                         className="pl-5"
                                         target="_blank"
@@ -129,7 +149,60 @@ const Header = () => {
                                         Buy Porto!
                                     </a>
                                 </li>
-                                <li className="float-right">
+                                <li className={`float-right `}>
+                                    <a href="#" className="pl-5">
+                                        Special Offer!
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                {/* mobile header */}
+                <div className={`mobileHeder ${menuOpen ? "show" : ""}`} >
+                    <div className="container">
+                        <button className='border-0 bg-transparent closeBtn'  onClick={() => setMenuOpen(false)}><i class="fa-solid fa-xmark"></i></button>
+                        <nav className="main-nav w-100">
+                            <ul className="menu">
+                                <li className={isActive("/") ? "active" : ""}>
+                                    <a href="/" >Home</a>
+                                </li>
+
+
+                                <li className={`drop_menu ${pathname.startsWith("/products") ? "active" : ""} ${isOpen ? "open" : ""
+                                    }`}>
+                                    <a href="#" className="menu-toggle"
+                                        onClick={() => setIsOpen(!isOpen)}>products </a>
+                                    {isOpen && (
+                                        <ul className="submenu">
+                                            <li><a href="/wishlist">Wishlist</a></li>
+                                            <li><a href="/cart">Shopping Cart</a></li>
+                                            <li><a href="/checkout">Checkout</a></li>
+                                            <li><a href="/dashboard">Dashboard</a></li>
+                                            <li><a href="/about">About Us</a></li>
+                                            <li><a href="/contact">Contact Us</a></li>
+                                            <li><a href="/login">Login</a></li>
+                                            <li><a href="/forgot-password">Forgot Password</a></li>
+                                        </ul>
+                                    )}
+                                </li>
+                                <li className={isActive("/about") ? "active" : ""}>
+                                    <a href="/about">About Us</a>
+                                </li>
+                                <li className={isActive("/contact") ? "active" : ""}>
+                                    <a href="/contact" >Contact Us</a>
+                                </li>
+                                <li className={`float-right ms-3 `}>
+                                    <a
+                                        href="/"
+                                        rel="noopener"
+                                        className="pl-5"
+                                        target="_blank"
+                                    >
+                                        Buy Porto!
+                                    </a>
+                                </li>
+                                <li className={`float-right `}>
                                     <a href="#" className="pl-5">
                                         Special Offer!
                                     </a>
